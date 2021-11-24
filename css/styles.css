@@ -1,7 +1,6 @@
 
 /*-------------GOOGLE FONTS -----------------------*/
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&family=Quicksand:wght@300;700&display=swap');
 /*----------------------CSS----------------------*/
 :root {
     --header-height: 3.5rem; /*56px*/
@@ -9,6 +8,7 @@
     /*========== Colores ==========*/
     --hue: 152;
     --first-color: hsl(var(--hue), 24%, 32%);
+    --first-color-dark: hsl(var(--hue), 24%, 50%);
     --first-color-alt: hsl(var(--hue), 24%, 28%);
     --first-color-light: hsl(var(--hue), 24%, 66%);
     --first-color-lighten: hsl(var(--hue), 24%, 92%);
@@ -19,6 +19,7 @@
     --container-color: #FFF;
   
 
+    --second-font: 'PT Serif', serif;
     --body-font: 'Quicksand', sans-serif;
     --big-font-size: 2rem;
     --h1-font-size: 1.5rem;
@@ -43,6 +44,7 @@
     --z-tooltip: 10;
     --z-fixed: 100;
   }
+
   
   @media screen and (min-width: 968px) {
     :root {
@@ -65,6 +67,7 @@
   
   html{
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   
   body,
