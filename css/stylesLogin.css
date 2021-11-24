@@ -306,16 +306,19 @@
   
   @media screen and (min-width: 1024px){
     .login{
-    margin-top: 2%;
+    margin-top: 3%;
+    margin-bottom: 6%;
       height: 100vh;
       overflow: hidden;
     }
   
     .login__content{
+        height: 100vh;
       grid-template-columns: repeat(2, max-content);
       justify-content: center;
       align-items: center;
       margin-left: 10rem;
+      margin-bottom: 6%;
     }
   
     .login__img{
@@ -323,7 +326,7 @@
       width: 800px;
       height: 500px;
       padding: 3%;
-      background-color: var(--first-color-light);
+      background-color: var(#fff);
       border-radius: 15%;
       padding-left: 1rem;
     }
@@ -354,10 +357,43 @@
     }
   }
   
-  @media screen and (min-width: 768px){
-    :root{
-      --normal-font-size: 1rem;
-      --small-font-size: .875rem;
+  @media screen and (min-width: 1024px){
+    .login{
+      height: 100vh;
+      overflow: hidden;
+    }
+  
+    .login__content{
+      grid-template-columns: repeat(2, max-content);
+      justify-content: center;
+      align-items: center;
+      margin-left: 10rem;
+    }
+  
+    .login__img{
+      display: flex;
+      width: 600px;
+      height: 588px;
+      background-color: var(#FFF);
+      border-radius: 1rem;
+      padding-left: 1rem;
+    }
+  
+    .login__img img{
+      width: 600px;
+      margin-top: 0;
+    }
+  
+    .login__registre, .login__create{
+      left: -11rem;
+    }
+  
+    .login__registre{
+      bottom: -2rem;
+    }
+  
+    .login__create{
+      bottom: -2rem;
     }
   }
   
