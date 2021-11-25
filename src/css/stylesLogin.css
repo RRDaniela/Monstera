@@ -54,7 +54,25 @@
     scroll-behavior: smooth;
     overflow-x: hidden;
   }
-  
+  .card {
+    height: min-content;
+  box-shadow: 10px 10px 5px 0px rgba(238, 238, 238, 1);
+  margin: 15px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.card-img-top{
+  width: 100%;
+  height: 100%;
+}
+
+.input-group{
+  margin-bottom: 2rem;
+  margin-top: 0rem;
+
+}
+
   body,
   button,
   input,
@@ -63,8 +81,14 @@
     font-size: var(--normal-font-size);
   }
   
-  body{
-    margin: var(--header-height) 0 0 0;
+  .btn{
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .body{
+    margin-top: 0%;
+    padding: 0%;
+    /*margin: var(--header-height) 0 0 0;*/
     background-color: var(--body-color);
     color: var(--text-color);
     transition: .4s;
@@ -142,7 +166,8 @@
     justify-content: space-between;
     align-items: center;
   }
-  
+
+
   .nav__logo,
   .nav__toggle,
   .nav__close{
@@ -164,6 +189,12 @@
     color: var(--first-color);
   }
   
+  .nav-link{
+    font-size: 1rem;
+    color: black;
+  }
+
+
   .nav__logo:hover{
     color: var(--first-color);
   }

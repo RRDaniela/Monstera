@@ -1,3 +1,4 @@
+
 /*--------------MOSTRAR MENÚ-------------------------*/
 const navMenu = document.getElementById('nav-menu'), 
 navToggle=document.getElementById('nav-toggle'), 
@@ -62,3 +63,4 @@ signIn.addEventListener('click', ()=>{
     loginIn.classList.add('block')
     loginUp.classList.add('none')
 })
+
