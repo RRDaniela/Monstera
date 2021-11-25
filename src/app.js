@@ -20,7 +20,6 @@ app.use(express.static(__dirname+ "/img"));
 app.use(express.static(__dirname+ "/css"));
 app.use(express.static(__dirname+ "/js"));
 
-
 //Middlewares
 app.use(morgan('dev'));
 //Entender los datos que envía un usuario por un formulario

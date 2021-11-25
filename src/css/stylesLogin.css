@@ -114,6 +114,7 @@
     max-width: 968px;
     margin-left: var(--mb-1-5);
     margin-right: var(--mb-1-5);
+    margin-top: 2rem;
   }
   
   .grid{
@@ -409,7 +410,7 @@
   
   body{
     margin: 0;
-    padding: 0;
+    padding: 10%;
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
     color: var(--first-color-dark);
