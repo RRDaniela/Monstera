@@ -1,55 +1,21 @@
 import data from "../products2.js";
-/*document.body.onload = rowPro
+  $(data).each(function () {
+    var output= "<div class=\"card col-sm-3\"> <img class=\"card-img-top\"src=" +this.img+ "><div class=card-body><h5 class=card-title>"+this.title+"</h5><p>"+this.description+"</p><a href=\"#\" class=\"btn btn-warning\">"+"Editar"+"<i class=\"ri-edit-2-fill\"></i></a><a href=\"#\" class=\"btn btn-danger\">"+"Eliminar"+"<i class=\"ri-delete-bin-5-fill\"></i></a></div></div>";
+    $('#placeholder').append(output);
+});
 
-function rowProduct (){
-  const row = document.createElement("div");
-  const body = document.querySelector("body");
-  body.append(row);
-  row.setAttribute("class", "row");
-}*/
-const row = document.createElement("div");
-row.setAttribute("class", "row");
-row.setAttribute("id", "row");
-const body = document.querySelector("body");
-body.append(row);
-
-const buildProductCard = product=>{
-  const col = document.createElement("div");
-  const div = document.createElement("div");
-  const img = document.createElement("img");
-  const innerDiv = document.createElement("div");
-  const h5 = document.createElement("h5");
-  const p = document.createElement("p");
-  const a = document.createElement("a");
-  const a2 = document.createElement("a2");
-  const i = document.createElement("i");
-
-  //Agregar elementos al dom
-  const body = document.querySelector('#row');
-  body.append(col);
-  col.append(div);
-  div.append(img);
-  div.append(innerDiv);
-  innerDiv.append(h5);
-  innerDiv.append(p);
-  innerDiv.append(a);
-  innerDiv.append(a2);
-
-  //Agregar contenido.
-  col.setAttribute("class", "col-sm-4");
-  div.setAttribute("class", "card");
-  img.setAttribute("class", "card-img-top");
-  img.setAttribute("src", product.img);
-  innerDiv.setAttribute("class","card-body");
-  h5.setAttribute("class", "card-title");
-  h5.innerHTML=product.title;
-  p.setAttribute=("class", "card-text");
-  p.textContent=product.description;
-  a.setAttribute("class", "btn btn-warning");
-  a.setAttribute("href", "#");
-  a.innerHTML =' Editar <i class="ri-edit-2-fill"></i>';
-  a2.setAttribute("class", "btn btn-danger");
-  a2.setAttribute("href", "#");
-  a2.innerHTML =' Eliminar <i class="ri-delete-bin-5-fill"></i>';
-}
-data.forEach(product => buildProductCard(product));
+$('#search').keyup(function () {
+  var yourtext = $(this).val();
+  if (yourtext.length > 0) {
+      var abc = $('.card').filter(function () {
+          var str = $(this).text();
+          var re = new RegExp(yourtext, "i");
+          var result = re.test(str);
+          if (!result) {
+              return $(this);
+          }
+      }).hide();
+  } else {
+      $(".card").show();
+  }
+});
