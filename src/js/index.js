@@ -6,7 +6,7 @@ function rowProduct (){
   const body = document.querySelector("body");
   body.append(row);
   row.setAttribute("class", "row");
-}*/
+}
 const row = document.createElement("div");
 row.setAttribute("class", "row");
 row.setAttribute("id", "row");
@@ -48,4 +48,27 @@ const buildProductCard = product=>{
   a.innerHTML =' Agregar a carrito <i class="ri-shopping-cart-2-fill"></i>';
 }
 data.forEach(product => buildProductCard(product));
+*/
+console.log(data);
 
+
+
+  $(data).each(function () {
+    var output ="<ul><li class=list>" + this.title + " " + this.description + "--" + this.price+"</li></ul>";
+    $('#placeholder').append(output);
+});
+$('#search').keyup(function () {
+  var yourtext = $(this).val();
+  if (yourtext.length > 0) {
+      var abc = $('li.list').filter(function () {
+          var str = $(this).text();
+          var re = new RegExp(yourtext, "i");
+          var result = re.test(str);
+          if (!result) {
+              return $(this);
+          }
+      }).hide();
+  } else {
+      $("li").show();
+  }
+});

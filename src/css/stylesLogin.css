@@ -167,6 +167,10 @@
     align-items: center;
   }
 
+  .notify{
+    border: 1px solid red;
+}
+
 
   .nav__logo,
   .nav__toggle,
