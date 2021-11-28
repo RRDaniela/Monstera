@@ -2,6 +2,7 @@ import data from "../products2.js";
 
 let prodId = 2;
 
+/* Inserta los frijolitos al producto en la vista*/
 $(data).each(function() {
     if (this.id == prodId) {
         let numF = parseInt(this.frijolitos);
@@ -37,6 +38,14 @@ $(data).each(function() {
 
 });
 
+/*Inserta la foto del producto a la vista*/
+$(data).each(function() {
+    if (this.id == prodId) {
+        var output = "<img src=" + this.img + " id=\"expandedImg\" style=\"max-width: 600px; width: 100%;\">";
+        $('#imagen_details').append(output);
+    }
+
+});
 
 
 function sendShip() {

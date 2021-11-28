@@ -1,3 +1,28 @@
+//Mostrar menú
+const signUp = document.getElementById('sign-up'),
+    signIn = document.getElementById('sign-in'),
+    loginIn = document.getElementById('login-in'),
+    loginUp = document.getElementById('login-up');
+
+//cambiar a registrarse o a iniciar sesión
+signUp.addEventListener('click', () => {
+    loginIn.classList.remove('block')
+    loginUp.classList.remove('none')
+
+    loginIn.classList.add('none')
+    loginUp.classList.add('block')
+})
+
+signIn.addEventListener('click', () => {
+    loginIn.classList.remove('none')
+    loginUp.classList.remove('block')
+
+    loginIn.classList.add('block')
+    loginUp.classList.add('none')
+})
+
+
+
 const signupForm = document.getElementById("login-up");
 const signupButton = document.getElementById("signupBTN");
 
@@ -5,7 +30,6 @@ const form = document.getElementById("login-in");
 const button = document.getElementById("loginBTN");
 
 if (form) {
-    console.log("PELOTUDO");
 
     button.addEventListener("click", (e) => {
         e.preventDefault();
@@ -19,6 +43,7 @@ if (form) {
 
             localStorage.setItem('token', data.token);
 
+            window.location.replace('/index.html');
             console.log(data);
 
         }).catch(err => {
@@ -30,7 +55,6 @@ if (form) {
 }
 
 if (signupForm) {
-    console.log("PELOTUDO 2");
 
     signupButton.addEventListener("click", (e) => {
         e.preventDefault();
@@ -44,7 +68,11 @@ if (signupForm) {
 
             console.log(data);
 
-            alert('CUENTA CREADA jiji')
+            loginIn.classList.remove('none')
+            loginUp.classList.remove('block')
+
+            loginIn.classList.add('block')
+            loginUp.classList.add('none')
 
         }).catch(err => {
             console.log('God has forsaken us');

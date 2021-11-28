@@ -26,3 +26,61 @@ async function signup(email, password) {
 
     return response.json();
 }
+
+async function createProduct(product) {
+
+    const response = await fetch(`${url}/products`, {
+        method: 'POST',
+        body: JSON.stringify({...product }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+
+    if (!response.ok) {
+        throw new Error(`HTTP ERROR [CODE]: ${response.status}`);
+    }
+
+    return response.json();
+}
+
+async function getProducts() {
+
+    const response = await fetch(`${url}/products`, {
+        method: 'GET'
+    })
+
+    if (!response.ok) {
+        throw new Error(`HTTP ERROR [CODE]: ${response.status}`);
+    }
+
+    return response.json();
+}
+
+async function updateProduct(id, product) {
+    const response = await fetch(`${url}/products/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify(product),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+
+    if (!response.ok) {
+        throw new Error(`HTTP ERROR [CODE]: ${response.status}`);
+    }
+
+    return response.json();
+}
+
+async function deleteProduct(id) {
+    const response = await fetch(`${url}/products/${id}`, {
+        method: 'DELETE'
+    })
+
+    if (!response.ok) {
+        throw new Error(`HTTP ERROR [CODE]: ${response.status}`);
+    }
+
+    return response.json();
+}
