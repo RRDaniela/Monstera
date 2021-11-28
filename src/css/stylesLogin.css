@@ -113,6 +113,14 @@
     border: none;
     outline: none;
   }
+
+  .summary__price{
+    display: flex;
+  }
+  
+  .total{
+    display: flex;
+  }
   
   h1,h2,h3{
     color: var(--title-color);

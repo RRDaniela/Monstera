@@ -1,5 +1,6 @@
 const data = [
     {
+        id:"1",
         email:"rrdaniela@gmail.com",
         password:"123",
         role:"basic",
@@ -13,8 +14,19 @@ const data = [
         interiorNumber:"2",
         suburb:"Zapopan",
         referencia:"Casa gris",
-        cart: []},
+        cart: [        {
+            id:5
+        },{
+                id:1
+            },
+            {
+                id:3
+            },
         {
+            id:6
+        }]},
+        {
+        id:"2",
         email:"barush22@gmail.com",
         password:"123",
         role:"basic",
@@ -30,6 +42,7 @@ const data = [
         referencia:"Casa gris",
         cart: []},
         {
+        id:"3",
         email:"claudioipad21@gmail.com",
         password:"123",
         role:"basic",
