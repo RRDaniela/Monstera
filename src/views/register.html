@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/imgs/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="detail.css">
+    <title>Registrate</title>
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="navbar navbar-expand-lg" style ="background-color: #ffff">
+            <a class="navbar-brand nav-logo nav__logo" href="index.html"><i class="ri-leaf-line"></i>
+                Monstera</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item nav__item">
+                  <a class="nav-link" href="login.html">Iniciar sesión <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item nav__item">
+                  <a class="nav-link" href="Products.html">Productos</a>
+                </li>
+                <li class="nav-item nav__item">
+                    <a class="nav-link" href="Products.html">Contacto</a>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+    </header>
+    <main>
+        <div class="register__form">
+            <div class="register__title">
+                <h2>Registro de usuario</h2>
+            </div>
+            <hr>
+            <div class="email__r">
+              <h4>Email</h4>
+              <input id="email_reg" class="register__inputs" type="text">
+            </div>
+            <div class="pass__r">
+              <h4>Contraseña</h4>
+              <input id="pass_reg" class="register__inputs" type="password">
+            </div>
+            <div class="confirm__pass">
+              <h4>Confirmar Contraseña</h4>
+              <input id="confirm_pass" class="register__inputs" type="password">
+            </div>
+            <div class="names__r">
+              <h4>Nombre(s)</h4>
+              <input id="name_reg" class="register__inputs" type="text">
+            </div>
+            <div class="lnames__r">
+              <h4>Apellidos</h4>
+              <input id="lname_reg" class="register__inputs" type="text">
+            </div>
+            <div class="pnumber__r">
+              <h4>Teléfono</h4>
+              <input id="tel_reg" class="register__inputs" type="number">
+            </div>
+            <div class="address__r">
+              <h4>Dirección</h4>
+              <input id="address_reg" class="register__inputs" type="text">
+            </div>
+            <div class="city__r">
+              <h4>Ciudad</h4>
+              <input id="city_reg" class="register__inputs" type="text">
+            </div>
+            <div class="zip__r">
+              <h4>Código Postal</h4>
+              <input id="zip_reg" class="register__inputs" type="number">
+            </div>
+            <div class="country__r">
+              <h4>País</h4>
+                <select id="country_reg" class="select__countryR" aria-placeholder="   País">
+                <option disabled selected></option>
+                <option value="Mexico">México</option>
+                <option value="EU">Estados Unidos</option>
+                <option value="Canada">Canada</option>
+            </select>
+            </div>
+            <br>
+            <div class="register__bt">
+              <button class="cart_button">Registrar</button>
+            </div>
+            
+
+        </div>
+
+    </main>
+    
+</body>
+</html>

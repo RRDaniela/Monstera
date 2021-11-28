@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/imgs/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="detail.css">
+
+    <title>Información de envío</title>
+</head>
+
+<body>
+    <header class="header" id="header">
+        <nav class="navbar navbar-expand-lg" style="background-color: #ffff">
+            <a class="navbar-brand nav-logo nav__logo" href="index.html"><i class="ri-leaf-line"></i>
+                Monstera</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item nav__item">
+                        <a class="nav-link" href="login.html">Iniciar sesión <span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item nav__item">
+                        <a class="nav-link" href="Products.html">Productos</a>
+                    </li>
+                    <li class="nav-item nav__item">
+                        <a class="nav-link" href="Products.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container__placeh">
+            <div class="ship__info">
+                <div class="ship__title">
+                    <h2>Datos de envío</h2>
+                    <hr>
+                </div>
+                <div class="ship__names">
+                    <input id="nombre_envio" placeholder="   Nombre" class="short__ph">
+                    <input id="apellido_envio" placeholder="   Apellidos" class=" short__ph2">
+                </div>
+                <br>
+                <div class="shipp__address">
+                    <input id="direccion_envio" class="long__ph" placeholder="   Dirección">
+                    <br>
+                    <br>
+                    <input class="long__ph" placeholder="   Dirección 2">
+                </div>
+                <br>
+                <div class="country">
+                    <select id="pais_envio" class="select__country" aria-placeholder="   País">
+                        <option disabled selected>País</option>
+                        <option value="Mexico">México</option>
+                        <option value="EU">Estados Unidos</option>
+                        <option value="Canada">Canada</option>
+                    </select>
+                    <input id="ciudad_envio" class="short__ph" placeholder="   Ciudad">
+                </div>
+                <br>
+                <div class="zip__number">
+                    <input id="zip_envio" class="short__ph" placeholder="   Código Postal">
+                    <input id="tel_envio" class="short__ph2" placeholder="   Número telefónico">
+                </div>
+                <hr>
+                <!--<div class="ship__type">
+                    <div class="ship__t">
+                        <div class="free__sh">
+                            <input type="radio" id="free_ship" name="shipping_type" value="0.00" onclick="if(this.checked){selectShipping()}">
+                            <label for="free_ship">Envío gratis</label>
+                        </div>
+                        <div class="samed__sh" >
+                            <input type="radio" id="express_ship" name="shipping_type" value="150.00" onclick="if(this.checked){selectShipping()}">
+                            <label for="express_ship">Envío express - $150</label>
+                        </div>
+                    </div>
+                </div>--->
+                <hr>
+                <div class="ship__buttons">
+                    <button class="cart_button">Siguiente</button>
+                    <button class="cancel"> Cancelar</button>
+                </div>
+
+            </div>
+            <!--<div class="summary">
+                <div class="summary__title">
+                    <h2>Pedido</h2>
+                    <hr>
+                </div>
+                <div class="sum__photos">
+                    <div class="prod__photo">
+                        <img src="/imgs/dionaea.jpg">
+                    </div>
+                    <div class="p__summary">
+                        <h5>Nombre Producto</h5>
+                        <div class="summary__price">
+                            <p>$</p>
+                            <p>120.00</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="subtotal"> 
+                    <h4 class="subtotal__title">Subtotal</h4>
+                    <div class="subtotal__num">
+                        <h4>$</h4>
+                        <h4 id="subtotal_precio">120.00</h4>
+                    </div>
+                </div>
+                <div class="ship__price">
+                    <h4 class="shipnum__title">Envío</h4>
+                    <div class="subtotal__num">
+                        <h4>$</h4>
+                        <h4 id="envio_precio">0.00</h4>
+                    </div>
+                </div>
+                <hr>
+                <div class="total">
+                    <h4 class="shiptot__title">Total</h4>
+                    <div class="subtotal__num">
+                        <h4>$</h4>
+                        <h4 id="total_precio"></h4>
+                    </div>
+                </div>
+            </div>--->
+
+        </div>
+    </main>
+
+
+    <script type="text/javascript" src="shipping.js"></script>
+</body>
+
+</html>
