@@ -48,6 +48,7 @@ class Products {
         `
     }
 
+
     searchProducts() {
         $('#search').keyup(function() {
             var yourtext = $(this).val();

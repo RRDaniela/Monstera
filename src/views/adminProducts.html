@@ -44,15 +44,13 @@
             </div>
         </nav>
     </header>
-    <div class="input-group">
         <input type="search" name="search" id="search" class="form-control" aria-label="Text input with segmented dropdown button" placeholder="Buscar un producto">
-    </div>
+
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModalCenter">
         <i class="ri-add-circle-fill"></i>Agregar producto
     </button>
 
-    <!-- Modal -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -80,7 +78,8 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">Descripción</span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Descripción del producto" name="description">
+                            <textarea type="text" rows="3" class="form-control" placeholder="Descripción del producto" name="description">
+                                </textarea>
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
@@ -113,32 +112,34 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">Nombre</span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Nombre del producto" name="name">
+                            <input type="text" class="form-control" id="nombre_modal" placeholder="Nombre del producto" name="name" required>
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">Imagen</span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Imagen" name="image">
+                            <input type="text" class="form-control" id="img_modal" placeholder="Imagen" name="image">
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">Descripción</span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Descripción del producto" name="description">
+                            <textarea class="form-control" id="dec_modal" placeholder="Descripción del producto" name="description">
+                                </textarea>
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">Precio</span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Precio" name="price">
+                            <input type="text" class="form-control" id="precio_modal" placeholder="Precio" name="price">
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" id="edit-product-form-btn">Guardar Cambios</button>
+                    <button type="submit" class="btn btn-primary" id="edit-product-form-btn">Guardar Cambios</button>
                 </div>
+            
             </div>
         </div>
     </div>
@@ -147,6 +148,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <div id="placeholder" class="row"></div>
     <script type="module" src="adminProducts.js"></script>
+    <script type="module" src="validation.js"></script>
     <script src="main.js"></script>
 
 

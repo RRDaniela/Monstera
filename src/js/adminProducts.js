@@ -10,14 +10,16 @@ getProducts().then(data => {
 
         var output = `
         <div class="card col-sm-3"> 
-            <img class="card-img-top" src="${this.image}">
-            <div class=card-body>
-                <h5 class=card-title>${this.name}</h5>
-                <p class="text-justify">${this.description}</p>
-                <p class="font-weight-bold">Precio: $ ${this.price}</p>
-                <a href="#" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#ModalEditar" data-id="${this._id}" id="${index}-edit">Editar<i class="ri-edit-2-fill"></i></a>
-                <a href="#" class="btn btn-danger btn-sm" data-id="${this._id}" id="${index}-delete">Eliminar<i class="ri-delete-bin-5-fill"  ></i></a>
-            </div>
+        <img class="card-img-top"src="${this.image}">
+            <div class="card-body">
+                <h5 class="card-title">${this.name}</h5>
+                <p class="card-price">Precio: $ ${this.price}</p>
+                <p class="card-description"> ${this.description}</p>
+                    <div class="buttonsInline">
+                        <a style="font-size:x-small;text-align: center; color:white;" href="#" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#ModalEditar" data-id="${this._id}" id="${index}-edit">Editar<i class="ri-edit-2-fill"></i></a>
+                        <a style="font-size:x-small;text-align: center;" onClick ="refreshPage()" href="#" class="btn btn-danger btn-sm" data-id="${this._id}" id="${index}-delete">Eliminar<i class="ri-delete-bin-5-fill"  ></i></a>
+                    </div>
+                </div>
         </div>`;
         $('#placeholder').append(output);
 
@@ -82,8 +84,6 @@ getProducts().then(data => {
 
 
 
-
-
 $('#search').keyup(function() {
     var yourtext = $(this).val();
     if (yourtext.length > 0) {
@@ -112,6 +112,7 @@ if (createProductForm) {
         const description = createProductForm.description.value;
         const price = createProductForm.price.value;
 
+        console.log(description);
         createProduct({ name, image, description, price }).then(data => {
             console.log(data);
         }).catch(err => {
@@ -120,3 +121,95 @@ if (createProductForm) {
 
     });
 }
+
+function refreshPage(){
+    window.location.reload();
+}
+
+
+
+$("#create-product-form-btn").click(function() {
+    //refreshPage();
+});
+
+$("#edit-product-form-btn").click(function() {
+    //refreshPage();
+
+    let nombre = ($("#ModalEditar #nombre_modal").val());
+    if(nombre == ""){
+        alert("Nombre vacío");
+    }
+    /*const nombre = form.name.value;
+    const img = form.image.value;
+    const desc = form.description.value;
+    const precio = form.price.value;
+
+    img.addEventListener("input", function(event) {
+        if (img.validity.typeMismatch){
+            img.setCustomValidity("La imagen no puede estar vacía");
+        }
+        else{
+            img.setCustomValidity("");
+        }
+    });
+
+    desc.addEventListener("input", function(event) {
+        if (desc.validity.typeMismatch){
+            desc.setCustomValidity("La descripción no puede estar vacía");
+        }
+        else{
+            desc.setCustomValidity("");
+        }
+    });
+
+    precio.addEventListener("input", function(event) {
+        if (precio.validity.typeMismatch){
+            precio.setCustomValidity("El precio no puede estar vacío");
+        }
+        else{
+            precio.setCustomValidity("");
+        }
+    });*/
+});
+
+
+/*$("#edit-product-form-btn").click(function(){
+    const form = getElementById("edit-product-form")
+    const nombre = form.name.value;
+    const img = form.image.value;
+    const desc = form.description.value;
+    const precio = form.price.value;
+
+    img.addEventListener("input", function(event) {
+        if (img.validity.typeMismatch){
+            img.setCustomValidity("La imagen no puede estar vacía");
+        }
+        else{
+            img.setCustomValidity("");
+        }
+    });
+
+    desc.addEventListener("input", function(event) {
+        if (desc.validity.typeMismatch){
+            desc.setCustomValidity("La descripción no puede estar vacía");
+        }
+        else{
+            desc.setCustomValidity("");
+        }
+    });
+
+    precio.addEventListener("input", function(event) {
+        if (precio.validity.typeMismatch){
+            precio.setCustomValidity("El precio no puede estar vacío");
+        }
+        else{
+            precio.setCustomValidity("");
+        }
+    });
+
+
+
+
+});
+*/
+
