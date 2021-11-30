@@ -82,9 +82,7 @@ getProducts().then(data => {
 
 
 
-function deleteProducts() {
 
-}
 
 $('#search').keyup(function() {
     var yourtext = $(this).val();

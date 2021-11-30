@@ -84,3 +84,44 @@ async function deleteProduct(id) {
 
     return response.json();
 }
+
+async function getUsers() {
+
+    const response = await fetch(`${url}/users`, {
+        method: 'GET'
+    })
+
+    if (!response.ok) {
+        throw new Error(`HTTP ERROR [CODE]: ${response.status}`);
+    }
+
+    return response.json();
+}
+
+async function deleteUser(id) {
+    const response = await fetch(`${url}/users/${id}`, {
+        method: 'DELETE'
+    })
+
+    if (!response.ok) {
+        throw new Error(`HTTP ERROR [CODE]: ${response.status}`);
+    }
+
+    return response.json();
+}
+
+async function updateUser(id, user) {
+    const response = await fetch(`${url}/users/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify(user),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+
+    if (!response.ok) {
+        throw new Error(`HTTP ERROR [CODE]: ${response.status}`);
+    }
+
+    return response.json();
+}
