@@ -2,9 +2,8 @@ import data from "../products2.js";
 
 getProducts().then(data => {
     const products = data.body;
-
-
     $(products).each(function() {
+        if(this.description.includes("sombra") && !this.description.includes("Media")){
         var output = `
         <div class="card col-sm-3"> 
         <img class="card-img-top"src="${this.image}">
@@ -18,7 +17,7 @@ getProducts().then(data => {
     </div>
         `;
         $('#placeholder').append(output);
-    });
+    }});
 }).catch(err => {
 
 })

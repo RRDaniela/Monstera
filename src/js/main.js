@@ -2,7 +2,6 @@
 const navMenu = document.getElementById('nav-menu'),
     navToggle = document.getElementById('nav-toggle'),
     navClose = document.getElementById('nav-close');
-
 //Mostrar menú.
 //Si la constante existe..
 if (navToggle) {

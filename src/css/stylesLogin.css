@@ -55,16 +55,36 @@
     overflow-x: hidden;
   }
   .card {
+    position: relative;
     height: min-content;
   box-shadow: 10px 10px 5px 0px rgba(238, 238, 238, 1);
-  margin: 15px;
+  margin: 5px;
   text-align: center;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
+}
+
+.card-description{
+  color: black;
+  font-size: var(--smaller-font-size);
+  text-align: justify;
+  display: none;
+}
+
+.card-title{
+  font-size: var(--small-font-size);
+  text-align: center;
+  color: var(--text-color);
+}
+
+.card-price{
+  font-size: var(--smaller-font-size);
+  text-align: center;
+  color: var(--text-color-light);
 }
 
 .card-img-top{
-  width: 80%;
-  height: 80%;
+  width: 150px;
+  height: 150px;
   margin-top: 2rem;
   align-self: center;
   border-radius: 5px 5px 0 0;
@@ -84,20 +104,78 @@
     font-size: var(--normal-font-size);
   }
   
+  #description{
+    font-size:x-small;
+    text-align: center;
+  }
+
+  .buttonsInline{
+    display: inline-block;
+  }
+
+  #placeholder{
+    justify-content: space-evenly;
+    align-content: flex-end;
+  }
+
   .btn{
     margin-left: .5rem;
     margin-right: .5rem;
     margin-top:.5rem;
   }
 
+  .card:hover .card-description{
+    display: block;
+  }
+
+  .card:hover .card-img-top{
+    display: none;
+  }
+
+  .card:hover .card-title{
+    display: none;
+  }
+
+  .card:hover .card-price{
+    display: none;
+  }
+
+  #search{
+    margin-top: 0px;
+  }
+
+  .btn-success{
+    background-color: var(--first-color);
+    border-color: var(--first-color);
+  }
+
+  .btn-outline-success{
+    margin-bottom: 1rem;
+    color: var(--first-color);
+    border-color: var(--first-color);
+  }
+
+  .btn-outline-success:hover{
+    background-color: var(--first-color);
+    border-color: var(--first-color);
+  }
+
+  .btn-warning{
+    background-color: rgb(206, 161, 37);
+    border-color: rgb(206, 161, 37);
+  }
+
+  .btn-danger{
+    background-color: rgb(168, 28, 28);
+    border-color: rgb(168, 28, 28);
+  }
 
   .card:hover{
     box-shadow: 0 15px 10px -10px rgba(31, 31, 31, 0.5);
     transition: all 0.3s ease;
-    position: relative;
-    padding-bottom: 50px;
+    padding: 10px;
     margin: 0 !important;
-    background-color: rgba(201, 230, 201, 0.2);
+    background-color: white;
 }
   .body{
     margin-top: 0%;
@@ -364,6 +442,7 @@
   display:none;
 }
 @media screen and (min-width: 576px){
+
     .login__forms{
       width: 348px;
       justify-self: center;
