@@ -76,11 +76,3 @@ function sendRegistration() {
 
     }
 }
-
-
-
-
-/*
-function newGalleryImage(){
-    const gImage = "<img src=" +this.img+ " alt=" +this.name+" onclick="myGallery(this);">";
-*/
