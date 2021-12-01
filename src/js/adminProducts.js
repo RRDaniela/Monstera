@@ -16,14 +16,12 @@ getProducts().then(data => {
                 <p class="card-price">Precio: $ ${this.price}</p>
                 <p class="card-description"> ${this.description}</p>
                     <div class="buttonsInline">
-                    <a style="font-size:x-small;text-align: center; color:white;" href="#" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#ModalEditar" data-id="${this._id}" id="${index}-edit">Editar<i class="ri-edit-2-fill"></i></a>
-                    <a style="font-size:x-small;text-align: center;" onClick ="refreshPage()" href="#" class="btn btn-danger btn-sm" data-id="${this._id}" id="${index}-delete">Eliminar<i class="ri-delete-bin-5-fill"  ></i></a>
+                        <a style="font-size:x-small;text-align: center; color:white;" href="#" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#ModalEditar" data-id="${this._id}" id="${index}-edit">Editar<i class="ri-edit-2-fill"></i></a>
+                        <a style="font-size:x-small;text-align: center;" onClick ="refreshPage()" href="#" class="btn btn-danger btn-sm" data-id="${this._id}" id="${index}-delete">Eliminar<i class="ri-delete-bin-5-fill"  ></i></a>
                     </div>
                 </div>
         </div>`;
         $('#placeholder').append(output);
-
-
 
         const deleteBtn = document.getElementById(`${index}-delete`);
         const editBtn = document.getElementById(`${index}-edit`);
@@ -31,6 +29,9 @@ getProducts().then(data => {
         editBtn.onclick = function editProduct(event) {
 
             const id = event.target.getAttribute('data-id');
+
+            console.log(id);
+
             const editProductForm = document.getElementById('edit-product-form');
             const editProductFormBtn = document.getElementById('edit-product-form-btn');
 
@@ -82,7 +83,6 @@ getProducts().then(data => {
 })
 
 
-
 $('#search').keyup(function() {
     var yourtext = $(this).val();
     if (yourtext.length > 0) {
@@ -121,42 +121,22 @@ if (createProductForm) {
     });
 }
 
-function refreshPage() {
+function refreshPage(){
     window.location.reload();
 }
 
 
-/*
 $("#create-product-form-btn").click(function() {
     //refreshPage();
 });
-*/
 
-/*
 $("#edit-product-form-btn").click(function() {
     //refreshPage();
 
     let nombre = ($("#ModalEditar #nombre_modal").val());
-    if (nombre == "") {
+    if(nombre == ""){
         alert("Nombre vacío");
     }
-
-    let img = ($("#ModalEditar #img_modal").val());
-    if (img == "") {
-        alert("Imagen vacía");
-    }
-
-    let desc = ($("#ModalEditar #desc_modal").val());
-    if (desc == "") {
-        alert("Descripción vacía");
-    }
-
-    let precio = ($("#ModalEditar #precio_modal").val());
-    if (precio == "") {
-        alert("Precio vacío");
-    }
-
-
     /*const nombre = form.name.value;
     const img = form.image.value;
     const desc = form.description.value;
@@ -187,9 +167,8 @@ $("#edit-product-form-btn").click(function() {
         else{
             precio.setCustomValidity("");
         }
-    });
-});*/
-
+    });*/
+});
 
 /*$("#edit-product-form-btn").click(function(){
     const form = getElementById("edit-product-form")
@@ -227,5 +206,5 @@ $("#edit-product-form-btn").click(function() {
 
 
 
-
-});*/
+});
+*/
