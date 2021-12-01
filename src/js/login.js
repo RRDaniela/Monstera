@@ -28,6 +28,9 @@ const signupButton = document.getElementById("signupBTN");
 
 const form = document.getElementById("login-in");
 const button = document.getElementById("loginBTN");
+const errorBox = document.getElementById('login_error_container');
+
+errorBox.innerHTML = '';
 
 if (form) {
 
@@ -38,6 +41,7 @@ if (form) {
         const password = form.password.value;
 
         console.log(`EMAIL: ${email}, PASSWORD: ${password}`);
+        errorBox.innerHTML = '';
 
         login(email, password).then(data => {
 
@@ -47,8 +51,11 @@ if (form) {
             console.log(data);
 
         }).catch(err => {
-            console.log('God has forsaken us');
-            console.error(err);
+            errorBox.innerHTML = `
+                <div class="alert alert-danger" role="alert">
+                    Ha ocurrido un error iniciando sesión
+                </div>
+            `;
         })
 
     });

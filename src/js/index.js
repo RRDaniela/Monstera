@@ -31,19 +31,29 @@ class Products {
 
         this.productContainer.innerHTML = productsHtml;
 
+        this.products.forEach(product => {
+
+            const btn = document.getElementById(`${product._id}-cart`);
+
+            btn.addEventListener('click', (event) => {
+                const id = btn.getAttribute('data-id');
+            })
+        })
+
     }
 
     createDomElement(product) {
-
         return `
-        <div class="card col-sm-3"> 
-            <img class="card-img-top"src="${product.image}">
-            <div class=card-body>
-                <h5 class=card-title>${product.name}</h5>
-                <p class="text-justify">${product.description}</p>
-                <p>Precio: $ ${product.price}</p>
-                <a href="#" class="btn btn-success">Agregar a carrito<i class="ri-shopping-cart-2-fill"></i></a>
-            </div>
+        <div class="card col-sm-3">
+            <a href="/prodDetail.html/${product._id}" >  
+                <img class="card-img-top"src="${product.image}">
+                <div class=card-body>
+                    <h5 class=card-title>${product.name}</h5>
+                    <p class="text-justify">${product.description}</p>
+                    <p>Precio: $ ${product.price}</p>
+                    <button  class="btn btn-success" id="${product._id}-cart" data-id="${product._id}">Agregar a carrito<i class="ri-shopping-cart-2-fill"></i></button>
+                </div>
+            <a/>
         </div>
         `
     }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,29 +15,30 @@
     <link rel="stylesheet" href="detail.css">
     <title>Registrate</title>
 </head>
+
 <body>
     <header class="header" id="header">
-        <nav class="navbar navbar-expand-lg" style ="background-color: #ffff">
+        <nav class="navbar navbar-expand-lg" style="background-color: #ffff">
             <a class="navbar-brand nav-logo nav__logo" href="index.html"><i class="ri-leaf-line"></i>
                 Monstera</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-          
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item nav__item">
-                  <a class="nav-link" href="login.html">Iniciar sesión <span class="sr-only"></span></a>
-                </li>
-                <li class="nav-item nav__item">
-                  <a class="nav-link" href="Products.html">Productos</a>
-                </li>
-                <li class="nav-item nav__item">
-                    <a class="nav-link" href="Products.html">Contacto</a>
-                  </li>
-              </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item nav__item" id="login-anchor">
+                        <a class="nav-link" href="login.html">Iniciar sesión <span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item nav__item">
+                        <a class="nav-link" href="Products.html">Productos</a>
+                    </li>
+                    <li class="nav-item nav__item">
+                        <a class="nav-link" href="Products.html">Contacto</a>
+                    </li>
+                </ul>
             </div>
-          </nav>
+        </nav>
     </header>
     <main>
         <div class="register__form">
@@ -45,43 +47,43 @@
             </div>
             <hr>
             <div class="email__r">
-              <h4>Email</h4>
-              <input id="email_reg" class="register__inputs" type="text">
+                <h4>Email</h4>
+                <input id="email_reg" class="register__inputs" type="text">
             </div>
             <div class="pass__r">
-              <h4>Contraseña</h4>
-              <input id="pass_reg" class="register__inputs" type="password">
+                <h4>Contraseña</h4>
+                <input id="pass_reg" class="register__inputs" type="password">
             </div>
             <div class="confirm__pass">
-              <h4>Confirmar Contraseña</h4>
-              <input id="confirm_pass" class="register__inputs" type="password">
+                <h4>Confirmar Contraseña</h4>
+                <input id="confirm_pass" class="register__inputs" type="password">
             </div>
             <div class="names__r">
-              <h4>Nombre(s)</h4>
-              <input id="name_reg" class="register__inputs" type="text">
+                <h4>Nombre(s)</h4>
+                <input id="name_reg" class="register__inputs" type="text">
             </div>
             <div class="lnames__r">
-              <h4>Apellidos</h4>
-              <input id="lname_reg" class="register__inputs" type="text">
+                <h4>Apellidos</h4>
+                <input id="lname_reg" class="register__inputs" type="text">
             </div>
             <div class="pnumber__r">
-              <h4>Teléfono</h4>
-              <input id="tel_reg" class="register__inputs" type="number">
+                <h4>Teléfono</h4>
+                <input id="tel_reg" class="register__inputs" type="number">
             </div>
             <div class="address__r">
-              <h4>Dirección</h4>
-              <input id="address_reg" class="register__inputs" type="text">
+                <h4>Dirección</h4>
+                <input id="address_reg" class="register__inputs" type="text">
             </div>
             <div class="city__r">
-              <h4>Ciudad</h4>
-              <input id="city_reg" class="register__inputs" type="text">
+                <h4>Ciudad</h4>
+                <input id="city_reg" class="register__inputs" type="text">
             </div>
             <div class="zip__r">
-              <h4>Código Postal</h4>
-              <input id="zip_reg" class="register__inputs" type="number">
+                <h4>Código Postal</h4>
+                <input id="zip_reg" class="register__inputs" type="number">
             </div>
             <div class="country__r">
-              <h4>País</h4>
+                <h4>País</h4>
                 <select id="country_reg" class="select__countryR" aria-placeholder="   País">
                 <option disabled selected></option>
                 <option value="Mexico">México</option>
@@ -91,13 +93,15 @@
             </div>
             <br>
             <div class="register__bt">
-              <button class="cart_button">Registrar</button>
+                <button class="cart_button">Registrar</button>
             </div>
-            
+
 
         </div>
 
     </main>
-    
+
 </body>
+<script src="global.js"></script>
+
 </html>

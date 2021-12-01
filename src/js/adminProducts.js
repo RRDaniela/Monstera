@@ -29,9 +29,6 @@ getProducts().then(data => {
         editBtn.onclick = function editProduct(event) {
 
             const id = event.target.getAttribute('data-id');
-
-            console.log(id);
-
             const editProductForm = document.getElementById('edit-product-form');
             const editProductFormBtn = document.getElementById('edit-product-form-btn');
 
@@ -122,7 +119,7 @@ if (createProductForm) {
     });
 }
 
-function refreshPage(){
+function refreshPage() {
     window.location.reload();
 }
 
@@ -136,9 +133,26 @@ $("#edit-product-form-btn").click(function() {
     //refreshPage();
 
     let nombre = ($("#ModalEditar #nombre_modal").val());
-    if(nombre == ""){
+    if (nombre == "") {
         alert("Nombre vacío");
     }
+
+    let img = ($("#ModalEditar #img_modal").val());
+    if (img == "") {
+        alert("Imagen vacía");
+    }
+
+    let desc = ($("#ModalEditar #desc_modal").val());
+    if (desc == "") {
+        alert("Descripción vacía");
+    }
+
+    let pr = ($("#ModalEditar #precio_modal").val());
+    if (nombre == "") {
+        alert("Nombre vacío");
+    }
+
+
     /*const nombre = form.name.value;
     const img = form.image.value;
     const desc = form.description.value;
@@ -210,6 +224,4 @@ $("#edit-product-form-btn").click(function() {
 
 
 
-});
-*/
-
+});*/

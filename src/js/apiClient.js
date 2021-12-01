@@ -10,6 +10,10 @@ async function login(email, password) {
         }
     });
 
+    if (!response.ok) {
+        throw new Error(response);
+    }
+
 
     return response.json();
 }

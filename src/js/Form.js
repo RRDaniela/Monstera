@@ -8,13 +8,15 @@ class Form {
 
 
     validateonSubmit() {
-        let self = this;
 
         this.button.addEventListener("click", (e) => {
             /*  e.preventDefault(); */
 
             const email = this.form.email.value;
             const password = this.form.password.value;
+            let errorBox = document.getElementById('login-error');
+
+
 
             console.log(`EMAIL: ${email}, PASSWORD: ${password}`);
 
@@ -25,11 +27,15 @@ class Form {
                 console.log(data);
 
             }).catch(err => {
-                console.log('God has forsaken us');
-                console.error(err);
-            })
 
-        })
+
+
+                errorBox.innerHTML = `
+                
+                `
+            });
+
+        });
     }
 
     validateFields(field) {
