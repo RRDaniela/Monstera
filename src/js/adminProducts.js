@@ -16,12 +16,14 @@ getProducts().then(data => {
                 <p class="card-price">Precio: $ ${this.price}</p>
                 <p class="card-description"> ${this.description}</p>
                     <div class="buttonsInline">
-                        <a style="font-size:x-small;text-align: center; color:white;" href="#" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#ModalEditar" data-id="${this._id}" id="${index}-edit">Editar<i class="ri-edit-2-fill"></i></a>
-                        <a style="font-size:x-small;text-align: center;" onClick ="refreshPage()" href="#" class="btn btn-danger btn-sm" data-id="${this._id}" id="${index}-delete">Eliminar<i class="ri-delete-bin-5-fill"  ></i></a>
+                    <a style="font-size:x-small;text-align: center; color:white;" href="#" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#ModalEditar" data-id="${this._id}" id="${index}-edit">Editar<i class="ri-edit-2-fill"></i></a>
+                    <a style="font-size:x-small;text-align: center;" onClick ="refreshPage()" href="#" class="btn btn-danger btn-sm" data-id="${this._id}" id="${index}-delete">Eliminar<i class="ri-delete-bin-5-fill"  ></i></a>
                     </div>
                 </div>
         </div>`;
         $('#placeholder').append(output);
+
+
 
         const deleteBtn = document.getElementById(`${index}-delete`);
         const editBtn = document.getElementById(`${index}-edit`);
@@ -124,11 +126,13 @@ function refreshPage() {
 }
 
 
-
+/*
 $("#create-product-form-btn").click(function() {
     //refreshPage();
 });
+*/
 
+/*
 $("#edit-product-form-btn").click(function() {
     //refreshPage();
 
@@ -147,9 +151,9 @@ $("#edit-product-form-btn").click(function() {
         alert("Descripción vacía");
     }
 
-    let pr = ($("#ModalEditar #precio_modal").val());
-    if (nombre == "") {
-        alert("Nombre vacío");
+    let precio = ($("#ModalEditar #precio_modal").val());
+    if (precio == "") {
+        alert("Precio vacío");
     }
 
 
@@ -183,8 +187,8 @@ $("#edit-product-form-btn").click(function() {
         else{
             precio.setCustomValidity("");
         }
-    });*/
-});
+    });
+});*/
 
 
 /*$("#edit-product-form-btn").click(function(){
