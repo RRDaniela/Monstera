@@ -36,7 +36,6 @@ getUsers().then(data => {
                         <span>¿Seguro que quiere eliminar este usuario?</span>
                     </div>
                     <div class="modal-footer">
-                        
                         <button type="button" class="btn btn-primary" id="${index}-delete2">Eliminar</button>
                     </div>
                 </div>
@@ -46,7 +45,7 @@ getUsers().then(data => {
 
 
         if (decodedToken.role == "admin") {
-            document.getElementById(`${index}-delete2`).style.display = "none";
+            document.getElementById(`${index}-delete`).style.display = "none";
             document.getElementById('chooseRole').style.display = "none";
 
         }
@@ -97,7 +96,6 @@ getUsers().then(data => {
 
 
             const id = event.target.getAttribute('data-id');
-            console.log(id);
             deleteUser(id).then(data => {
                 //refreshPage();
                 console.log('Eliminado');
