@@ -20,7 +20,7 @@
     <title>Monstera</title>
 </head>
 
-<body>
+<body class="p-0">
     <header class="header" id="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #ffff">
             <a class="navbar-brand nav-logo nav__logo" href="index.html"><i class="ri-leaf-line"></i>
@@ -31,6 +31,15 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
+                    <li class=" nav__item nav-item">
+                        <div class="dropdown">
+                            <a id="settings" class="nav-link"><i class="ri-settings-5-fill dropbtn"  onclick="myFunction()"></i></a>
+                            <div id="myDropdown" class="dropdown-content">
+                                <a href="users.html">Editar usuarios</a>
+                                <a href="adminProducts.html">Editar productos</a>
+                            </div>
+                        </div>
+                    </li>
                     <li class="nav-item nav__item" id="login-anchor">
                         <a class="nav-link" href="login.html">Iniciar sesión <span class="sr-only"></span></a>
                     </li>
@@ -40,15 +49,22 @@
                     <li class="nav-item nav__item">
                         <a class="nav-link" href="Products.html">Contacto</a>
                     </li>
+                    <li class="nav-item nav__item">
+                        <a class="nav-link" href="carrito.html"><i class="ri-shopping-cart-2-fill"></i></a>
+                    </li>
                 </ul>
             </div>
         </nav>
     </header>
-    <div class="input-group">
-        <input type="search" name="search" id="search" class="form-control" aria-label="Text input with segmented dropdown button" placeholder="Buscar un producto">
+    <div class="p-5">
+        <div class="input-group">
+            <input type="search" name="search" id="search" class="form-control" aria-label="Text input with segmented dropdown button" placeholder="Buscar un producto">
+        </div>
+        <div id="placeholder" class="row"></div>
     </div>
+
     <!--Modal Editar-->
-    <div class="modal fade" id="ModalEditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="ModalEditarUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -63,21 +79,31 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">Email</span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Email usuario" name="email">
+                            <input type="text" id="email_user" class="form-control" placeholder="Email usuario" name="email">
                         </div>
+                        <div class="input-group mb-3" id="chooseRole">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">Rol</span>
+                            </div>
+                            <select name="rol" id="role-choose">
+                                <option value="basic">Básico</option>
+                                <option value="admin" selected>Administrador</option>
+                                <option value="super-admin">Súper administrador</option>
+                              </select> </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" id="edit-product-form-btn">Guardar Cambios</button>
+                    <button type="button" class="btn btn-primary" id="edit-user-btn">Guardar Cambios</button>
                 </div>
             </div>
         </div>
     </div>
 
+
+
     <script src="apiClient.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <div id="placeholder" class="row"></div>
     <script type="module" src="users.js"></script>
     <script src="main.js"></script>
     <script src="global.js"></script>

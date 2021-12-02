@@ -19,7 +19,7 @@
     <title>Monstera</title>
 </head>
 
-<body>
+<body class="p-0">
     <header class="header" id="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #ffff">
             <a class="navbar-brand nav-logo nav__logo" href="index.html"><i class="ri-leaf-line"></i>
@@ -30,6 +30,15 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
+                    <li class=" nav__item nav-item">
+                        <div class="dropdown">
+                            <a id="settings" class="nav-link"><i class="ri-settings-5-fill dropbtn"  onclick="myFunction()"></i></a>
+                            <div id="myDropdown" class="dropdown-content">
+                                <a href="users.html">Editar usuarios</a>
+                                <a href="adminProducts.html">Editar productos</a>
+                            </div>
+                        </div>
+                    </li>
                     <li class="nav-item nav__item" id="login-anchor">
                         <a class="nav-link" href="login.html">Iniciar sesión <span class="sr-only"></span></a>
                     </li>
@@ -39,109 +48,116 @@
                     <li class="nav-item nav__item">
                         <a class="nav-link" href="Products.html">Contacto</a>
                     </li>
+                    <li class="nav-item nav__item">
+                        <a class="nav-link" href="carrito.html"><i class="ri-shopping-cart-2-fill"></i></a>
+                    </li>
                 </ul>
             </div>
         </nav>
     </header>
-    <div class="input-group">
-        <input type="search" name="search" id="search" class="form-control" placeholder="Buscar un producto">
+
+    <div class="p-5">
+        <div class="input-group">
+            <input type="search" name="search" id="search" class="form-control" placeholder="Buscar un producto">
+        </div>
+
+        <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#ModalAgregar">
+            <i class="ri-add-circle-fill"></i>Agregar producto
+        </button>
+
+        <div class="modal fade" id="ModalAgregar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Agregar producto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="create-product-form">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Nombre</span>
+                                </div>
+                                <input type="text" id="nombre_modalAdd" class="form-control" placeholder="Nombre del producto" name="name">
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Imagen</span>
+                                </div>
+                                <input type="text" id="img_modalAdd" class="form-control" placeholder="Imagen" name="image">
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Descripción</span>
+                                </div>
+                                <textarea type="text" id="desc_modalAdd" rows="3" class="form-control" placeholder="Descripción del producto" name="description">
+                                    </textarea>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Precio</span>
+                                </div>
+                                <input type="text" id="precio_modalAdd" class="form-control" placeholder="Precio" name="price">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" id="create-product-form-btn">Agregar producto</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModalCenter">
-        <i class="ri-add-circle-fill"></i>Agregar producto
-    </button>
-
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <!--Modal Editar-->
+    <div class="modal fade" id="ModalEditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Agregar producto</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Editar Producto</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <span aria-hidden="true">&times;</span>
+                </button>
                 </div>
                 <div class="modal-body">
-                    <form id="create-product-form">
+                    <form id="edit-product-form">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">Nombre</span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Nombre del producto" name="name">
+                            <input type="text" class="form-control" id="nombre_modal" placeholder="Nombre del producto" name="name" required>
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">Imagen</span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Imagen" name="image">
+                            <input type="text" class="form-control" id="img_modal" placeholder="Imagen" name="image">
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">Descripción</span>
                             </div>
-                            <textarea type="text" rows="3" class="form-control" placeholder="Descripción del producto" name="description">
-                                </textarea>
+                            <textarea class="form-control" id="desc_modal" placeholder="Descripción del producto" name="description">
+                            </textarea>
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">Precio</span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Precio" name="price">
+                            <input type="text" class="form-control" id="precio_modal" placeholder="Precio" name="price">
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" id="create-product-form-btn">Agregar producto</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" id="edit-product-form-btn">Guardar Cambios</button>
                 </div>
+
             </div>
         </div>
     </div>
-<!--Modal Editar-->
-<div class="modal fade" id="ModalEditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Editar Producto</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form id="edit-product-form">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">Nombre</span>
-                        </div>
-                        <input type="text" class="form-control" id="nombre_modal" placeholder="Nombre del producto" name="name" required>
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">Imagen</span>
-                        </div>
-                        <input type="text" class="form-control" id="img_modal" placeholder="Imagen" name="image">
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">Descripción</span>
-                        </div>
-                        <textarea class="form-control" id="dec_modal" placeholder="Descripción del producto" name="description">
-                            </textarea>
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">Precio</span>
-                        </div>
-                        <input type="text" class="form-control" id="precio_modal" placeholder="Precio" name="price">
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="submit" class="btn btn-primary" id="edit-product-form-btn">Guardar Cambios</button>
-            </div>
-        
-        </div>
-    </div>
-</div>
 
 
     <div id="placeholder" class="row"></div>

@@ -31,6 +31,15 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
+                    <li class=" nav__item nav-item">
+                        <div class="dropdown">
+                            <a id="settings" class="nav-link"><i class="ri-settings-5-fill dropbtn"  onclick="myFunction()"></i></a>
+                            <div id="myDropdown" class="dropdown-content">
+                                <a href="users.html">Editar usuarios</a>
+                                <a href="adminProducts.html">Editar productos</a>
+                            </div>
+                        </div>
+                    </li>
                     <li class="nav-item nav__item" id="login-anchor" id="login-anchor">
                         <a class="nav-link" href="login.html">Iniciar sesión <span class="sr-only"></span></a>
                     </li>
@@ -39,6 +48,9 @@
                     </li>
                     <li class="nav-item nav__item">
                         <a class="nav-link" href="Products.html">Contacto</a>
+                    </li>
+                    <li class="nav-item nav__item">
+                        <a class="nav-link" href="carrito.html"><i class="ri-shopping-cart-2-fill"></i></a>
                     </li>
                 </ul>
             </div>
@@ -64,10 +76,10 @@
             </div>
             <ul class="list-group list-group-flush">
                 <div class="card-body">
-                    <li class="list-group-item"><a href="#" class="card-link">Agregar producto</a></li>
-                    <li class="list-group-item"><a href="#" class="card-link">Eliminar producto</a></li>
-                    <li class="list-group-item"><a href="#" class="card-link">Editar producto</a></li>
-                    <li class="list-group-item"><a href="#" class="card-link">Consultar</a></li>
+                    <li class="list-group-item"><a href="adminProducts.html" class="card-link">Agregar producto</a></li>
+                    <li class="list-group-item"><a href="adminProducts.html" class="card-link">Eliminar producto</a></li>
+                    <li class="list-group-item"><a href="adminProducts.html" class="card-link">Editar producto</a></li>
+                    <li class="list-group-item"><a href="Products.html" class="card-link">Consultar</a></li>
                 </div>
         </div>
         <div class="card" style="width: 18rem;">

@@ -27,3 +27,9 @@ if (decodedToken) {
 } else {
     anchor.style.display = 'block';
 }
+
+
+if (decodedToken.role == "basic") {
+    document.getElementById("settings").style.display = "none";
+    console.log(decodedToken.role);
+}

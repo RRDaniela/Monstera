@@ -19,7 +19,7 @@
     <title>Monstera</title>
 </head>
 
-<body>
+<body class="p-0">
     <header class="header" id="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #ffff">
             <a class="navbar-brand nav-logo nav__logo" href="../index.html"><i class="ri-leaf-line"></i>
@@ -30,6 +30,15 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
+                    <li class=" nav__item nav-item">
+                        <div class="dropdown">
+                            <a id="settings" class="nav-link"><i class="ri-settings-5-fill dropbtn"  onclick="myFunction()"></i></a>
+                            <div id="myDropdown" class="dropdown-content">
+                                <a href="users.html">Editar usuarios</a>
+                                <a href="adminProducts.html">Editar productos</a>
+                            </div>
+                        </div>
+                    </li>
                     <li class="nav-item nav__item" id="login-anchor">
                         <a class="nav-link" href="login.html">Iniciar sesión <span class="sr-only"></span></a>
                     </li>
@@ -39,20 +48,26 @@
                     <li class="nav-item nav__item">
                         <a class="nav-link" href="Products.html">Contacto</a>
                     </li>
+                    <li class="nav-item nav__item">
+                        <a class="nav-link" href="carrito.html"><i class="ri-shopping-cart-2-fill"></i></a>
+                    </li>
                 </ul>
             </div>
         </nav>
     </header>
-    <div class="input-group">
-        <input type="search" name="search" id="search" class="form-control" placeholder="Buscar un producto">
+    <div class="p-5">
+        <div class="input-group">
+            <input type="search" name="search" id="search" class="form-control" placeholder="Buscar un producto">
+        </div>
+        <div id="placeholder" class="row"></div>
     </div>
+
     </form>
     <script src="../apiClient.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <div id="placeholder" class="row"></div>
     <script type="module" src="../mediasombra.js"></script>
     <script src="../main.js"></script>
-    <script src="global.js"></script>
+    <script src="../global.js"></script>
 
 </body>
 

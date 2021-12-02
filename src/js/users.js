@@ -12,19 +12,47 @@ getUsers().then(data => {
     $(users).each(function(index) {
 
         let elemId = 0;
-
         var output = `
         <div class="card col-sm-3"> 
             <img class="card-img-top" src="userPhoto.png">
             <div class=card-body>
                 <h5 class=card-title>${this.email}</h5>
-                <a href="#" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#ModalEditar" data-id="${this._id}" id="${index}-edit">Editar<i class="ri-edit-2-fill"></i></a>
-                <a href="#" class="btn btn-danger btn-sm" data-id="${this._id}" id="${index}-delete">Eliminar<i class="ri-delete-bin-5-fill"  ></i></a>
+                <a href="#" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#ModalEditarUser" data-id="${this._id}" id="${index}-edit">Editar<i class="ri-edit-2-fill"></i></a>
+                <button class="btn btn-danger btn-sm" data-id="${this._id}" id="${index}-delete" data-toggle="modal" data-target="#ModalConfirmar" >Eliminar<i class="ri-delete-bin-5-fill"  ></i></button>
+            </div>
+        </div>
+        
+        <!--Modal Confirmar-->
+        <div class="modal fade" id="ModalConfirmar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Editar usuario</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <span>¿Seguro que quiere eliminar este usuario?</span>
+                    </div>
+                    <div class="modal-footer">
+                        
+                        <button type="button" class="btn btn-primary" id="${index}-delete2">Eliminar</button>
+                    </div>
+                </div>
             </div>
         </div>`;
         $('#placeholder').append(output);
 
-        const deleteBtn = document.getElementById(`${index}-delete`);
+
+        if (decodedToken.role == "admin") {
+            document.getElementById(`${index}-delete2`).style.display = "none";
+            document.getElementById('chooseRole').style.display = "none";
+
+        }
+
+
+        const deleteBtn = document.getElementById(`${index}-delete2`);
         const editBtn = document.getElementById(`${index}-edit`);
 
         editBtn.onclick = function editProduct(event) {
@@ -34,7 +62,7 @@ getUsers().then(data => {
             console.log(id);
 
             const editProductForm = document.getElementById('edit-product-form');
-            const editProductFormBtn = document.getElementById('edit-product-form-btn');
+            const editProductFormBtn = document.getElementById('edit-user-btn');
 
             let user = users.find(user => user._id === id);
             console.log(user);
@@ -44,19 +72,17 @@ getUsers().then(data => {
                 console.log("Hey")
 
                 editProductForm.email.value = user.email;
-                /*editProductForm.image.value = product.image;
-                editProductForm.description.value = product.description;
-                editProductForm.price.value = product.price;
-                */
+                editProductForm.rol.value = user.role;
+
                 editProductFormBtn.addEventListener("click", (e) => {
                     e.preventDefault();
 
                     const email = editProductForm.email.value;
-                    /*  const image = editProductForm.image.value;
-                    const description = editProductForm.description.value;
-                    const price = editProductForm.price.value;
-                */
-                    updateUser(id, { email }).then(data => {
+                    const role = editProductForm.rol.value;
+
+                    console.log(email, role);
+                    updateUser(id, { email, role }).then(data => {
+                        refreshPage();
                         console.log(data);
                     }).catch(err => {
                         console.error(err);
@@ -65,14 +91,15 @@ getUsers().then(data => {
                 });
             }
         }
-
         deleteBtn.onclick = function(event) {
 
             event.preventDefault();
 
-            const id = event.target.getAttribute('data-id');
 
+            const id = event.target.getAttribute('data-id');
+            console.log(id);
             deleteUser(id).then(data => {
+                //refreshPage();
                 console.log('Eliminado');
             }).catch(err => {
                 console.error(err);
@@ -85,7 +112,9 @@ getUsers().then(data => {
 })
 
 
-
+function refreshPage() {
+    window.location.reload();
+}
 
 
 $('#search').keyup(function() {
@@ -122,3 +151,14 @@ if (createProductForm) {
 
     });
 }
+
+$("#edit-user-btn").click(function() {
+    //refreshPage();
+    let mail = ($("#ModalEditarUser #email_user").val());
+    let rol = ($("#ModalEditarUser #rol_user").val());
+
+    if (mail == "" || rol == "") {
+        alert("No puede haber campos vacios");
+    }
+
+});

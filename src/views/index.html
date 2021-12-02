@@ -19,166 +19,175 @@
             </a>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="Products.html" class="nav__link"><i class="ri-settings-5-fill"></i></a>
+                    <li class=" nav__item">
+                        <div class="dropdown">
+                            <a id="settings" class="nav__link"><i class="ri-settings-5-fill dropbtn"  onclick="myFunction()"></i></a>
+                            <div id="myDropdown" class="dropdown-content">
+                                <a href="users.html">Editar usuarios</a>
+                                <a href="adminProducts.html">Editar productos</a>
+                            </div>
+                        </div>
                     </li>
-                    <li class="nav__item">
-                        <a href="Products.html" class="nav__link">Productos</a>
+                    <li class="nav__item ">
+                        <a href="Products.html " class="nav__link ">Productos</a>
                     </li>
-                    <li class="nav__item" id="login-anchor" id="login-anchor">
-                        <a href="login.html" class="nav__link">Iniciar sesión</a>
+                    <li class="nav__item " id="login-anchor">
+                        <a href="login.html " class="nav__link ">Iniciar sesión</a>
                     </li>
-                    <li class="nav__item">
-                        <a href="#contact" class="nav__link">Contacto</a>
+                    <li class="nav__item ">
+                        <a href="#contact " class="nav__link ">Contacto</a>
+                    </li>
+                    <li class="nav-item nav__item ">
+                        <a class="nav-link " href="carrito.html "><i class="ri-shopping-cart-2-fill "></i></a>
                     </li>
                 </ul>
-                <div class="nav__close" id="nav-close">
-                    <i class="ri-close-line"></i>
+                <div class="nav__close " id="nav-close ">
+                    <i class="ri-close-line "></i>
                 </div>
             </div>
-            <div class="nav__toggle" id="nav-toggle">
-                <i class="ri-menu-line"></i>
+            <div class="nav__toggle " id="nav-toggle ">
+                <i class="ri-menu-line "></i>
             </div>
         </nav>
     </header>
-    <main class="main">
-        <section class="home" id="home">
-            <div class="home__container container grid">
-                <img src="gardening.jpg" alt="" class="home__img responsive">
-                <div class="home__data">
-                    <h1 class="home__title">
+    <main class="main ">
+        <section class="home " id="home ">
+            <div class="home__container container grid ">
+                <img src="gardening.jpg " alt=" " class="home__img responsive ">
+                <div class="home__data ">
+                    <h1 class="home__title ">
                         Utiliza a las plantas <br> para dar vida.
                     </h1>
-                    <p class="home__description">Encuentra variedad de plantas florales y de follaje</p>
-                    <a href="#about" class="button button--flex">
-                        Explorar <i class="ri-arrow-right-down-line button__icon"></i>
+                    <p class="home__description ">Encuentra variedad de plantas florales y de follaje</p>
+                    <a href="#about " class="button button--flex ">
+                        Explorar <i class="ri-arrow-right-down-line button__icon "></i>
                     </a>
                 </div>
             </div>
         </section>
 
-        <section class="about section" id="about">
-            <div class="about__container grid">
-                <img src="monstera.jpg" alt="" class="about__img responsive">
-                <div class="about__data">
-                    <h2 class="section__title about__title">
+        <section class="about section " id="about ">
+            <div class="about__container grid ">
+                <img src="monstera.jpg " alt=" " class="about__img responsive ">
+                <div class="about__data ">
+                    <h2 class="section__title about__title ">
                         Quiénes somos
                     </h2>
-                    <p class="about__description">
+                    <p class="about__description ">
                         Somos una pequeña empresa dedicada a brindar belleza, textura y color a tu espacio. Nosotros buscamos que nuestras plantas reduzcan el estrés y creen un ambiente reconfortante y tranquilo.
                     </p>
-                    <div class="about__details">
-                        <p class="about__details-description">
-                            <i class="ri-checkbox-circle-fill about__details-icon"></i> Realizamos entregas a tiempo.
+                    <div class="about__details ">
+                        <p class="about__details-description ">
+                            <i class="ri-checkbox-circle-fill about__details-icon "></i> Realizamos entregas a tiempo.
                         </p>
-                        <p class="about__details-description">
-                            <i class="ri-checkbox-circle-fill about__details-icon"></i> Contamos con una gran variedad de plantas.
+                        <p class="about__details-description ">
+                            <i class="ri-checkbox-circle-fill about__details-icon "></i> Contamos con una gran variedad de plantas.
                         </p>
-                        <p class="about__details-description">
-                            <i class="ri-checkbox-circle-fill about__details-icon"></i> Facilitamos la búsqueda de la planta que deseas.
+                        <p class="about__details-description ">
+                            <i class="ri-checkbox-circle-fill about__details-icon "></i> Facilitamos la búsqueda de la planta que deseas.
                         </p>
                     </div>
-                    <a href="#" class="button--link button--flex">
-                    Compra ahora <i class="ri-arrow-down-s-fill button__icon"></i>
+                    <a href="# " class="button--link button--flex ">
+                    Compra ahora <i class="ri-arrow-down-s-fill button__icon "></i>
                 </a>
                 </div>
             </div>
         </section>
         <!--Tolerancia al sol-->
-        <section class="product section container" id="products">
-            <h2 class="section__title-center">
+        <section class="product section container " id="products ">
+            <h2 class="section__title-center ">
                 Elige tus plantas
             </h2>
-            <p class="product__description">
+            <p class="product__description ">
                 Echa un vistazo a nuestra selección de plantas. <br> ¡Tenemos una perfecta para tí!
             </p>
-            <h1 class="section__title">
+            <h1 class="section__title ">
                 Tolerancia al sol
             </h1>
-            <p class="product__description-justify">
+            <p class="product__description-justify ">
                 En otoño e invierno, las plantas toleran mejor los rayos del sol, pero en verano deben evitar recibirlos directamente.
             </p>
-            <div class="product__container grid">
-                <article class="product__card">
-                    <img src="temperatura.jpg" alt="Sol directo" class="product__img">
-                    <h3 class="product__category">
-                        <a href="toleranciaSol/soldirecto.html" class="button--link button--flex product__title">
-                                Sol directo <i class="ri-arrow-down-s-fill button__icon"></i>
+            <div class="product__container grid ">
+                <article class="product__card ">
+                    <img src="temperatura.jpg " alt="Sol directo " class="product__img ">
+                    <h3 class="product__category ">
+                        <a href="toleranciaSol/soldirecto.html " class="button--link button--flex product__title ">
+                                Sol directo <i class="ri-arrow-down-s-fill button__icon "></i>
                             </a>
                     </h3>
                 </article>
-                <article class="product__card">
-                    <img src="MediaSombra.jpg" alt="Media sombra" class="product__img">
-                    <h3 class="product__category">
-                        <a href="toleranciaSol/mediaSombra.html" class="button--link button--flex product__title">
-                                Media sombra <i class="ri-arrow-down-s-fill button__icon"></i>
+                <article class="product__card ">
+                    <img src="MediaSombra.jpg " alt="Media sombra " class="product__img ">
+                    <h3 class="product__category ">
+                        <a href="toleranciaSol/mediaSombra.html " class="button--link button--flex product__title ">
+                                Media sombra <i class="ri-arrow-down-s-fill button__icon "></i>
                             </a>
                     </h3>
                 </article>
-                <article class="product__card">
-                    <img src="Sombra.jpg" alt="Sombra" class="product__img">
-                    <h3 class="product__category">
-                        <a href="toleranciaSol/Sombra.html" class="button--link button--flex product__title">
-                                Sombra <i class="ri-arrow-down-s-fill button__icon"></i>
+                <article class="product__card ">
+                    <img src="Sombra.jpg " alt="Sombra " class="product__img ">
+                    <h3 class="product__category ">
+                        <a href="toleranciaSol/Sombra.html " class="button--link button--flex product__title ">
+                                Sombra <i class="ri-arrow-down-s-fill button__icon "></i>
                             </a>
                     </h3>
                 </article>
             </div>
         </section>
         <!--Temperatura ideal-->
-        <section class="product section container" id="products">
-            <h1 class="section__title">
+        <section class="product section container " id="products ">
+            <h1 class="section__title ">
                 Temperatura ideal
             </h1>
-            <p class="product__description-justify">
+            <p class="product__description-justify ">
                 Elige plantas resistentes al calor o al frío, de acuerdo con el clima de la zona donde las colocarás. </p>
             </p>
-            <div class="product__container grid">
-                <article class="product__card">
-                    <img src="X1-18.jpg" alt="Sol directo" class="product__img">
-                    <h3 class="product__category">
-                        <a href="temperaturaIdeal/18y0.html" class="button--link button--flex product__title">
-                                Mínimas entre -18°C y 0°C <i class="ri-arrow-down-s-fill button__icon"></i>
+            <div class="product__container grid ">
+                <article class="product__card ">
+                    <img src="X1-18.jpg " alt="Sol directo " class="product__img ">
+                    <h3 class="product__category ">
+                        <a href="temperaturaIdeal/18y0.html " class="button--link button--flex product__title ">
+                                Mínimas entre -18°C y 0°C <i class="ri-arrow-down-s-fill button__icon "></i>
                             </a>
                     </h3>
                 </article>
-                <article class="product__card">
-                    <img src="X1-20.jpg" alt="Media sombra" class="product__img">
-                    <h3 class="product__category">
-                        <a href="temperaturaIdeal/15y20.html" class="button--link button--flex product__title">
-                                Mínimas entre 15°C y 20°C <i class="ri-arrow-down-s-fill button__icon"></i>
+                <article class="product__card ">
+                    <img src="X1-20.jpg " alt="Media sombra " class="product__img ">
+                    <h3 class="product__category ">
+                        <a href="temperaturaIdeal/15y20.html " class="button--link button--flex product__title ">
+                                Mínimas entre 15°C y 20°C <i class="ri-arrow-down-s-fill button__icon "></i>
                             </a>
                     </h3>
                 </article>
-                <article class="product__card">
-                    <img src="X1-35.jpg" alt="Sombra" class="product__img" id="danny">
-                    <h3 class="product__category">
-                        <a href="temperaturaIdeal/25y35.html" class="button--link button--flex product__title">
-                                Máximas entre 25°C y 35°C <i class="ri-arrow-down-s-fill button__icon"></i>
+                <article class="product__card ">
+                    <img src="X1-35.jpg " alt="Sombra " class="product__img " id="danny ">
+                    <h3 class="product__category ">
+                        <a href="temperaturaIdeal/25y35.html " class="button--link button--flex product__title ">
+                                Máximas entre 25°C y 35°C <i class="ri-arrow-down-s-fill button__icon "></i>
                             </a>
                     </h3>
                 </article>
             </div>
         </section>
     </main>
-    <footer class="footer">
-        <div class="footer__container container grid">
-            <div class="footer__content">
-                <a href="" class="footer__logo">
-                    <i class="ri-leaf-line footer__logo-icon">
+    <footer class="footer ">
+        <div class="footer__container container grid ">
+            <div class="footer__content ">
+                <a href=" " class="footer__logo ">
+                    <i class="ri-leaf-line footer__logo-icon ">
                     </i> Monstera
                 </a>
             </div>
-            <div class="footer__content">
-                <h3 class="footer_title">Contáctanos</h3>
-                <ul class="footer__data">
-                    <li class="footer_information">(33)39684565</li>
+            <div class="footer__content ">
+                <h3 class="footer_title ">Contáctanos</h3>
+                <ul class="footer__data ">
+                    <li class="footer_information ">(33)39684565</li>
                 </ul>
             </div>
         </div>
     </footer>
-    <script src="global.js"></script>
-    <script src="main.js"></script>
+    <script src="global.js "></script>
+    <script src="main.js "></script>
 </body>
 
 </html>

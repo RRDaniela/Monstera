@@ -129,3 +129,73 @@ async function updateUser(id, user) {
 
     return response.json();
 }
+
+async function deleteUser(id) {
+    const response = await fetch(`${url}/users/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+
+    if (!response.ok) {
+        throw new Error(`HTTP ERROR [CODE]: ${response.status}`);
+    }
+
+    return response.json();
+}
+
+async function updateCart(id) {
+
+    const token = localStorage.getItem('token');
+
+    const response = await fetch(`${url}/users/cart/${id}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
+    })
+
+    if (!response.ok) {
+        throw new Error(`HTTP ERROR [CODE]: ${response.status}`);
+    }
+
+    return response.json();
+}
+
+async function getCart() {
+    const token = localStorage.getItem('token');
+    const response = await fetch(`${url}/users/cart/`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
+    })
+
+    if (!response.ok) {
+        throw new Error(`HTTP ERROR [CODE]: ${response.status}`);
+    }
+
+    return response.json();
+}
+
+async function deleteFromCart(id) {
+
+    const token = localStorage.getItem('token');
+
+    const response = await fetch(`${url}/users/cart/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
+    })
+
+    if (!response.ok) {
+        throw new Error(`HTTP ERROR [CODE]: ${response.status}`);
+    }
+
+    return response.json();
+}

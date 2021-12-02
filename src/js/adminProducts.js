@@ -121,22 +121,47 @@ if (createProductForm) {
     });
 }
 
-function refreshPage(){
+function refreshPage() {
     window.location.reload();
 }
 
 
 $("#create-product-form-btn").click(function() {
     //refreshPage();
+    let nombre = ($("#ModalAgregar #nombre_modalAdd").val());
+    let img = ($("#ModalAgregar #img_modalAdd").val());
+    let desc = ($("#ModalAgregar #desc_modalAdd").val());
+    let precio = ($("#ModalAgregar #precio_modalAdd").val());
+    if (nombre == "" || img == "" || desc == "" || precio == "") {
+        alert("No puede haber campos vacios");
+    }
+
 });
 
 $("#edit-product-form-btn").click(function() {
-    //refreshPage();
+    refreshPage();
 
     let nombre = ($("#ModalEditar #nombre_modal").val());
-    if(nombre == ""){
+    if (nombre == "") {
         alert("Nombre vacío");
     }
+
+    let img = ($("#ModalEditar #img_modal").val());
+    if (img == "") {
+        alert("Imagen vacía");
+    }
+
+    let desc = ($("#ModalEditar #desc_modal").val());
+    if (desc == "") {
+        alert("Descripción vacía");
+    }
+
+    let precio = ($("#ModalEditar #precio_modal").val());
+    if (precio == "") {
+        alert("Precio vacío");
+    }
+
+
     /*const nombre = form.name.value;
     const img = form.image.value;
     const desc = form.description.value;

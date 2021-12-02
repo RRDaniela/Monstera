@@ -34,11 +34,38 @@ class Products {
         this.products.forEach(product => {
 
             const btn = document.getElementById(`${product._id}-cart`);
+            const redirectToDetail = document.getElementById(`${product._id}-redirect`);
 
-            btn.addEventListener('click', (event) => {
+            btn.addEventListener('click', async(event) => {
                 const id = btn.getAttribute('data-id');
-                console.log(id);
-            })
+
+
+                try {
+                    await updateCart(id);
+                    const successAlert = document.getElementById('success-box');
+
+                    successAlert.style.display = 'block';
+
+                    setTimeout(() => {
+                        successAlert.style.display = 'none';
+                    }, 2000);
+
+                } catch (error) {
+                    console.log(error);
+                    const errorAlert = document.getElementById('error-box');
+
+                    errorAlert.style.display = 'block';
+
+                    setTimeout(() => {
+                        errorAlert.style.display = 'none';
+                    }, 2000);
+                }
+
+            });
+
+            redirectToDetail.addEventListener('click', () => {
+                window.location.replace(`/prod_detail.html?id=${product._id}`);
+            });
         })
 
     }
@@ -48,8 +75,8 @@ class Products {
 
 
         return `
-        <div class="card col-sm-3" > 
-        <img class="card-img-top"src="${product.image}">
+        <div class="card col-sm-3" id="${product._id}-redirect"> 
+            <img class="card-img-top"src="${product.image}">
             <div class="card-body">
                 <h5 class="card-title">${product.name}</h5>
                 <p class="card-price">Precio: $ ${product.price}</p>

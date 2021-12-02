@@ -20,7 +20,7 @@
     <title>Monstera</title>
 </head>
 
-<body>
+<body class="p-0">
     <header class="header" id="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #ffff">
             <a class="navbar-brand nav-logo nav__logo" href="index.html"><i class="ri-leaf-line"></i>
@@ -31,6 +31,15 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
+                    <li class=" nav__item nav-item">
+                        <div class="dropdown">
+                            <a id="settings" class="nav-link"><i class="ri-settings-5-fill dropbtn"  onclick="myFunction()"></i></a>
+                            <div id="myDropdown" class="dropdown-content">
+                                <a href="users.html">Editar usuarios</a>
+                                <a href="adminProducts.html">Editar productos</a>
+                            </div>
+                        </div>
+                    </li>
                     <li class="nav-item nav__item" id="login-anchor">
                         <a class="nav-link" href="login.html">Iniciar sesión <span class="sr-only"></span></a>
                     </li>
@@ -44,35 +53,52 @@
             </div>
         </nav>
     </header>
-    <div class="modal-body row">
-        <div class="col-md-7">
-            <div id="placeholder" class="row">
+
+
+    <div class="mt-5">
+
+        <div class="row w-100">
+            <div class="col-8 d-flex justify-content-center ">
+                <div id="placeholder" class="row">
+
+                    <div class="spinner-border" role="status" id="loading">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+
+
+                    <div class="alert alert-info w-100" role="alert" id="notfound" style="display: none;">
+                        ¿Tu carrito está vacio! Agrega articulos
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col-md-5">
-            <div id="placeholder2" class="row">
-                <div class="summary">
-                    <div class="summary__title">
-                        <h4 style="color: black;">Pedido</h4>
+            <div id="placeholder2 " class="col-4 d-flex justify-content-center ">
+                <div id="placeholder2 ">
+                    <div class="summary ">
+                        <div class="summary__title ">
+                            <h4 style="color: black; ">Pedido</h4>
+                            <hr>
+                        </div>
+                        <hr>
+                        <div class="card total " style="width: 18rem; ">
+                            <ul class="list-group list-group-flush ">
+                                <li class="list-group-item " style="color: black; background-color: rgb(237, 250, 226); ">Total</li>
+                                <li class="list-group-item " style="color: black;" id="total_precio"></li>
+                            </ul>
+                        </div>
                         <hr>
                     </div>
-                    <hr>
-                    <div class="card total" style="width: 18rem;">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item" style="color: black; background-color: rgb(237, 250, 226);">Total</li>
-                            <li class="list-group-item" style="color: black;" id="total_precio"></li>
-                        </ul>
-                    </div>
-                    <hr>
                 </div>
             </div>
         </div>
+
+
     </div>
+
+    <script src="apiClient.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="main.js"></script>
     <script type="module" src="carrito.js"></script>
     <script src="global.js"></script>
-
 </body>
 
 </html>
